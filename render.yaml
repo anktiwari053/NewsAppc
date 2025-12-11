@@ -1,12 +1,16 @@
 services:
-  - type: web
+  - type: static
     name: newsapp
-    env: static
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
-    pullRequestPreviewsEnabled: false
-    envVars:
-      - key: NODE_VERSION
-        value: 18.x
-
+    # Root directory should be empty (root of repo) - this is the default
+    # Only specify rootDir if your project is in a subdirectory
+    
+    # Environment variables (add your API keys here if needed)
+    # Uncomment and add your environment variables:
+    # envVars:
+    #   - key: VITE_BASE_PATH
+    #     value: /
+    #   - key: VITE_API_KEY
+    #     value: your-api-key-here
 
