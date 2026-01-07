@@ -19,7 +19,8 @@ export default class News extends Component {
     this.setState({ loading: true });
 
     // Backend URL
-    let url = `http://localhost:5000/news?category=${this.props.category}&page=${pageNo}&pageSize=${this.props.pageSize}`;
+   // let url = `http://localhost:5000/news?category=${this.props.category}&page=${pageNo}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&page=${page}&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`;
 
     try {
       let data = await fetch(url);
